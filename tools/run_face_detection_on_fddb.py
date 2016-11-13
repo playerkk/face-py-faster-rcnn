@@ -105,9 +105,11 @@ if __name__ == '__main__':
 
 	print '\n\nLoaded network {:s}'.format(caffemodel)
 
-	data_dir = '/data/hzjiang/Data/face/Data/FDDB/'
-	work_dir = '/data/hzjiang/Data/face/WorkingData/FDDB-faster-cnn-80000/originalPics'
-	force_new = False
+	data_dir = 'data/FDDB/'
+  out_dir = 'output/fddb_res'
+
+  if not os.path.exists(out_dir):
+    os.makedirs(out_dir)
 
 	CONF_THRESH = 0.65
 	NMS_THRESH = 0.15
@@ -124,7 +126,7 @@ if __name__ == '__main__':
 		image_names = imdb[i]
 
 		# detection file
-		dets_file_name = 'fddb_res/FDDB-det-fold-%02d.txt' % (i + 1)
+		dets_file_name = os.path.join(out_dir, 'FDDB-det-fold-%02d.txt' % (i + 1)
 		fid = open(dets_file_name, 'w')
 		sys.stdout.write('%s ' % (i + 1))
 
@@ -135,30 +137,16 @@ if __name__ == '__main__':
 			# Load the demo image
 			mat_name = im_name + '.mat'
 
-			# print os.path.join(work_dir, mat_name)
+			# im_path = im_name + '.jpg'
+			im = cv2.imread(os.path.join(data_dir, 'originalPics', im_name + '.jpg'))
 
-			if (not force_new) and os.path.exists(os.path.join(work_dir, mat_name)):
-				res = sio.loadmat(os.path.join(work_dir, mat_name))
-				boxes = res['boxes']
-				scores = res['scores']
-			else:
-				# im_path = im_name + '.jpg'
-				im = cv2.imread(os.path.join(data_dir, 'originalPics', im_name + '.jpg'))
-
-				# # Detect all object classes and regress object bounds
-				# timer = Timer()
-				# timer.tic()
-				scores, boxes = im_detect(net, im)
-				# timer.toc()
-				# print ('Detection took {:.3f}s for '
-				#        '{:d} object proposals').format(timer.total_time, boxes.shape[0])
-
-				dir_name, mat_name = os.path.split(im_name)
-				if not os.path.exists(os.path.join(work_dir, dir_name)):
-					os.makedirs(os.path.join(work_dir, dir_name))
-
-				res = {'boxes': boxes, 'scores': scores}
-				sio.savemat(os.path.join(work_dir, mat_name), res)
+			# # Detect all object classes and regress object bounds
+			# timer = Timer()
+			# timer.tic()
+			scores, boxes = im_detect(net, im)
+			# timer.toc()
+			# print ('Detection took {:.3f}s for '
+			#        '{:d} object proposals').format(timer.total_time, boxes.shape[0])
 
 			cls_ind = 1
 			cls_boxes = boxes[:, 4*cls_ind:4*(cls_ind + 1)]

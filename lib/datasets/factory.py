@@ -34,13 +34,13 @@ for year in ['2015']:
         __sets[name] = (lambda split=split, year=year: coco(split, year))
 
 # Set up wider
-wider_devkit_path = '/home/hzjiang/fast-rcnn-data'
+wider_devkit_path = 'data/WIDER'
 for split in ['train', 'test']:
     name = '{}_{}'.format('wider', split)
     __sets[name] = (lambda split=split: face(split, wider_devkit_path))
 
 # Set up IJB-A
-ijba_devkit_path = '/data2/hzjiang/Data/CS2'
+ijba_devkit_path = 'data/IJB_A'
 for split in xrange(1, 11):
 	name = 'ijba_train_split_%d' % split
 	__sets[name] = (lambda split = split: face('train', split, ijba_devkit_path))

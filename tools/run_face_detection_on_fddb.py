@@ -193,6 +193,6 @@ if __name__ == '__main__':
 		print ''
 		fid.close()
 
-	os.system('cp ./fddb_res/*.txt ~/Code/FDDB/results')
+	# os.system('cp ./fddb_res/*.txt ~/Code/FDDB/results')
 
 			

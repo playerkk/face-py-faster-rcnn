@@ -145,3 +145,6 @@ python ./tools/run_face_detection_on_fddb.py --gpu=0
 
 ### Pre-trained face detection model
 A pre-trained face detection model trained on the WIDER training set is available [here](http://supermoe.cs.umass.edu/~hzjiang/data/vgg16_faster_rcnn_iter_80000.caffemodel).
+
+###Acknowledgment 
+This research is based upon work supported by the Office of the Director of National Intelligence (ODNI), Intelligence Advanced Research Projects Activity (IARPA) under contract number 2014-14071600010. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of ODNI, IARPA, or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Governmental purpose notwithstanding any copyright annotation thereon.

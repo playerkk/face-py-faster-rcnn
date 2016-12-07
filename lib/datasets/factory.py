@@ -12,7 +12,7 @@ __sets = {}
 from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
 from datasets.face import face
-from datasets.map_data import map_data
+# from datasets.map_data import map_data
 import numpy as np
 
 # Set up voc_<year>_<split> using selective search "fast" mode

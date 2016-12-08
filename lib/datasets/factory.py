@@ -37,13 +37,13 @@ for year in ['2015']:
 wider_devkit_path = 'data/WIDER'
 for split in ['train', 'test']:
     name = '{}_{}'.format('wider', split)
-    __sets[name] = (lambda split=split: face(split, wider_devkit_path))
+    __sets[name] = (lambda split=split: face(split, 0, wider_devkit_path))
 
-# Set up IJB-A
-ijba_devkit_path = 'data/IJB_A'
-for split in xrange(1, 11):
-	name = 'ijba_train_split_%d' % split
-	__sets[name] = (lambda split = split: face('train', split, ijba_devkit_path))
+# # Set up IJB-A
+# ijba_devkit_path = 'data/IJB_A'
+# for split in xrange(1, 11):
+# 	name = 'ijba_train_split_%d' % split
+# 	__sets[name] = (lambda split = split: face('train', split, ijba_devkit_path))
 
 def get_imdb(name):
     """Get an imdb (image database) by name."""

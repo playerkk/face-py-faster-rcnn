@@ -87,7 +87,6 @@ class face(imdb):
         # image_set_file = 'split%d/%s_%d_annot.txt' % (self._fold, self._image_set, self._fold)
         # # image_set_file = os.path.join(self._devkit_path, image_set_file)
         # image_set_file = os.path.join('/home/hzjiang/Code/py-faster-rcnn/CS3-splits', image_set_file)
-	print self._name
         image_set_file = self._name + '_face_' + self._image_set + '_annot.txt'
         image_set_file = os.path.join(self._devkit_path, image_set_file)
 

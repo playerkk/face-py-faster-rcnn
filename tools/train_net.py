@@ -8,8 +8,8 @@
 # --------------------------------------------------------
 
 """Train a Fast R-CNN network on a region of interest database."""
-import matplotlib 
-matplotlib.use('Agg') 
+# import matplotlib 
+# matplotlib.use('Agg') 
 
 import _init_paths
 from fast_rcnn.train import get_training_roidb, train_net

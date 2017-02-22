@@ -37,10 +37,10 @@ For technical details, please refer to the [technial report](https://arxiv.org/p
 
 ### Installation (sufficient for the demo)
 
-1. Clone the Faster R-CNN repository
+1. Clone the face Faster R-CNN repository
   ```Shell
   # Make sure to clone with --recursive
-  git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git
+  git clone --recursive git@github.com:playerkk/face-py-faster-rcnn.git
   ```
 
 2. We'll call the directory that you cloned Faster R-CNN into `FRCN_ROOT`

@@ -34,7 +34,7 @@ import PIL
 
 class face(imdb):
     def __init__(self, image_set, split, devkit_path):
-        imdb.__init__(self, image_set)
+        imdb.__init__(self, 'wider')
         self._image_set = image_set         # {'train', 'test'}
         self._split = split                 # {1, 2, ..., 10}
         self._devkit_path = devkit_path     # /data2/hzjiang/Data/CS2
@@ -87,7 +87,7 @@ class face(imdb):
         # image_set_file = 'split%d/%s_%d_annot.txt' % (self._fold, self._image_set, self._fold)
         # # image_set_file = os.path.join(self._devkit_path, image_set_file)
         # image_set_file = os.path.join('/home/hzjiang/Code/py-faster-rcnn/CS3-splits', image_set_file)
-
+	print self._name
         image_set_file = self._name + '_face_' + self._image_set + '_annot.txt'
         image_set_file = os.path.join(self._devkit_path, image_set_file)
 
@@ -108,6 +108,7 @@ class face(imdb):
             idx = 0
             while idx < len(lines):
                 image_name = lines[idx].split('\n')[0]
+                image_name = os.path.join('WIDER_%s/images' % self._image_set, image_name)
                 # print image_name
                 image_ext = os.path.splitext(image_name)[1].lower()
                 # print image_ext

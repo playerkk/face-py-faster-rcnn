@@ -93,7 +93,7 @@ For technical details, please refer to the [technial report](https://arxiv.org/p
     
 3. Download the [file](http://jianghz.me/files/wider_face_train_annot.txt) and put it under the WIDER directory. It contains annotations of the training images, which follows the annotation format of [FDDB](http://vis-www.cs.umass.edu/fddb/README.txt). Faces that are less than 10 pixels are discarded (considered as background), which slightly improves the performance.
 
-4. Create symlinks for the PASCAL VOC dataset
+4. Create symlinks for the WIDER dataset
 
   ```Shell
     cd $FRCN_ROOT/data

@@ -25,9 +25,13 @@ For technical details, please refer to the [technial report](https://arxiv.org/p
   USE_CUDNN := 1
   ```
 
-  You can download the [Makefile.config](http://www.cs.berkeley.edu/~rbg/fast-rcnn-data/Makefile.config) (from Ross Girshick) for reference.
+  You can download the [Makefile.config](http://www.cs.berkeley.edu/~rbg/fast-rcnn-data/Makefile.config) (from Ross Girshick) for reference.  
+  
 2. Python packages you might not have: `cython`, `python-opencv`, `easydict`
+
 3. [Optional] MATLAB is required for **official** PASCAL VOC evaluation only. The code now includes unofficial Python evaluation code.
+
+4. If you have trouble compiling the Caffe in the submodule, you might find [this one](https://supermoe.cs.umass.edu/~hzjiang/data/caffe-fast-rcnn-cuda8.tar.gz) helpful.
 
 ### Requirements: hardware
 

@@ -93,7 +93,7 @@ For technical details, please refer to the [technial report](https://arxiv.org/p
     $WIDER/WIDER_train/                     # training set
     $WIDER/WIDER_val/                       # validation set
     # ... and several other directories ...
-    ```
+  ```
     
 3. Download the [file](http://jianghz.me/files/wider_face_train_annot.txt) and put it under the WIDER directory. It contains annotations of the training images, which follows the annotation format of [FDDB](http://vis-www.cs.umass.edu/fddb/README.txt). Faces that are less than 10 pixels are discarded (considered as background), which slightly improves the performance.
 
@@ -102,8 +102,8 @@ For technical details, please refer to the [technial report](https://arxiv.org/p
   ```Shell
     cd $FRCN_ROOT/data
     ln -s $WIDER WIDER
-    ```
-    Using symlinks is a good idea because you will likely want to share the same PASCAL dataset installation between multiple projects.
+  ```
+Using symlinks is a good idea because you will likely want to share the same PASCAL dataset installation between multiple projects.
 5. Follow the next sections to download pre-trained ImageNet models
 
 ### Download pre-trained ImageNet models
